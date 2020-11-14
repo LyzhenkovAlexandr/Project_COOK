@@ -25,9 +25,7 @@ body {
 html {
   overflow-x:hidden!important;
 }
-</style>
 
-<style scoped>
 .text {
   color: #fff;
 }

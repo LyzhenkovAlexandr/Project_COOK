@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="hot-plates">
     <span class="title">Горячие блюда</span>
     <article class="box-line">
       <router-link tag="article" to="/hot_list/hot_1" class="box">
@@ -45,14 +45,14 @@ export default {};
 </script>
 
 <style>
-.box-line {
+.hot-plates .box-line {
   position: absolute;
   display: block;
   width: 100%;
   text-align: center;
   margin-top: 15px;
 }
-.box {
+.hot-plates .box {
   display: inline-block;
   width: 470px;
   height: 230px;
@@ -64,7 +64,7 @@ export default {};
   overflow: hidden;
   text-align: left;
 }
-.box div {
+.hot-plates .box div {
   height: 210px;
   width: 200px;
   margin: 10px;
@@ -75,12 +75,13 @@ export default {};
   border-bottom-right-radius: 8px;
   text-align: center;
 }
-.box img {
+.hot-plates .box img {
   height: 210px;
   margin: 0;
 }
 
-.title {
+
+.hot-plates .title {
   display: block;
   color: #fff;
   font-size: 25px;
@@ -89,7 +90,7 @@ export default {};
   padding-top: 15px;
 }
 
-.box .title {
+.hot-plates .box .title {
   color: #000;
   font-size: 20px;
   font-weight: bold;
@@ -98,14 +99,43 @@ export default {};
   margin-right: 10px;
 }
 
-.box .desc {
+.hot-plates .box .desc {
   width: 220px;
-  margin: 10px 20px 10px 0;
+  margin: 10px;
   display: block;
   color: #000;
   font-size: 14px;
   font-weight: normal;
   float: right;
   text-indent: 15px;
+}
+
+@media only screen and (max-width: 1024px) {
+.hot-plates .box {
+  display: inline-block;
+  width: 235px;
+  min-height: 470px;
+}
+.box div {
+  height: 210px;
+  width: 215px;
+  margin: 10px;
+  clear: both;
+  border-radius: 32px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-align: center;
+}
+
+.hot-plates .box .desc {
+  width: 215px!important;
+  margin: 10px;
+  display: block;
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+  clear:both;
+  text-indent: 15px;
+}
 }
 </style>

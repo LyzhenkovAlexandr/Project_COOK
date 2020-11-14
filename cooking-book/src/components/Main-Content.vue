@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="main-content">
     <span class="title">Рецепты</span>
     <span class="desc"
       >Ищете рецепт? Тогда наш сайт идеально для вас подходит! Выберете наиболее
@@ -34,15 +34,15 @@
 export default {};
 </script>
 
-<style scoped>
-.box-line {
+<style>
+.main-content .box-line {
   position: absolute;
   display: block;
   width: 100%;
   text-align: center;
   margin-top: 35px;
 }
-.box {
+.main-content .box {
   display: inline-block;
   width: 235px;
   height: 235px;
@@ -53,11 +53,11 @@ export default {};
   margin: 12px;
 }
 
-.box img {
+.main-content .box img {
     width:160px;
     height: 160px;
 }
-.box button {
+.main-content .box button {
     margin-top: 10px;
   width: 160px;
   height: 30px;
@@ -68,7 +68,7 @@ export default {};
   outline-width: 0;
   background: #fff;
 }
-.title {
+.main-content .title {
     display: block;
     color: #fff;
     font-size: 25px;
@@ -77,7 +77,7 @@ export default {};
     padding-top: 15px;
 }
 
-.desc {
+.main-content .desc {
     display: block;
     color: #fff;
     font-size: 17px;

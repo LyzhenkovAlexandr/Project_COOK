@@ -1,10 +1,12 @@
 <template>
-  <div class="header Flex">
+  <div class="t-header">
+    <router-link tag="div" to="/"  class="logo"><img src="@/assets/logo.png" /></router-link>
+    <div class="header">
     <span>Максимастер</span>
-    <img src="@/assets/logo.png" />
+    
 
 
-    <nav class="menu" id="main-menu">
+    <!-- <nav class="menu" id="main-menu">
       <section class="menu-flex-1">
         <section class="menu-dropdown">
           <button class="button">На главную</button>
@@ -14,10 +16,10 @@
           <button class="button">Десерты</button>
         </section>
       </section>
-    </nav>
+    </nav> -->
 
     <button class="box-2" id="toggle-menu"><img src="@/assets/menu_btn.png" /></button>
-  </div>
+  </div></div>
 </template>
 
 <script>
@@ -37,8 +39,8 @@ export default {
 };
 </script>
 
-<style scoped>
-.header {
+<style>
+.t-header .header {
   background: #001C23;
   width: 100%;
   height: 55px;
@@ -46,7 +48,7 @@ export default {
   text-align: center;
 }
 
-.header > span {
+.t-header .header > span {
   font-family: SF UI Text;
   font-size: 20px;
   font-style: normal;
@@ -59,46 +61,55 @@ export default {
   float: left;
 }
 
-.header > button {
+.t-header .header > button {
   background: none;
   border: none;
   width: initial;
   outline: none;
-  line-height: 50px;
+  line-height: 18px;
   float: right;
   padding-right: 26px;
+  padding-left:0;
 }
 
-.header > button img {
+.t-header .header > button img {
   width: 26px;
   height: 18px;
   margin-left: 26px;
 }
-
-.header > img {
-  height: 40px;
-  margin-left: -56px;
-  margin-top: 6.5px;
-}
-
-.Flex {
-  display: flex;
+.t-header .logo {
+  position: absolute;
+  top: 6.5px;
   width: 100%;
-  justify-content: space-between;
+  height:40px;
+  text-align: center;
 }
-.box-1 {
+
+.t-header .logo > img {
+  margin: 0 auto;
+  height: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+ .t-header .logo > img {
+  margin: 0 auto;
+  height: 40px;
+  padding-left: 100px;
+}
+}
+.t-header .box-1 {
   padding-left: 20px;
   padding-top: 7px;
 }
-.box-1,
-.box-2 {
+.t-header .box-1,
+.t-header .box-2 {
   height: inherit;
 }
-.box-2 {
+.t-header .box-2 {
   padding-right: 15px;
   padding-top: 7px;
 }
-.box-2 {
+.t-header .box-2 {
   background: transparent;
   font-size: 3.1em;
   width: 1em;
@@ -108,7 +119,7 @@ export default {
   white-space: nowrap;
   text-indent: 2em;
 }
-.box-2::after {
+.t-header .box-2::after {
   position: absolute;
   top: 0.4em;
   right: 0.3em;
@@ -117,7 +128,7 @@ export default {
   text-indent: 0;
   cursor: pointer;
 }
-.menu {
+.t-header .menu {
   display: block;
   position: absolute;
   right: -500px;
@@ -126,27 +137,27 @@ export default {
   background: rgb(12, 238, 151);
   transition-duration: 0.9s;
 }
-.menu.is-open {
+.t-header .menu.is-open {
   /* display: block; */
   transform: translateX(-500px);
   transition-duration: 0.9s;
 }
-.menu-flex-1 {
+.t-header .menu-flex-1 {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
-.menu-dropdown {
+.t-header .menu-dropdown {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 175px;
 }
-.button {
+.t-header .menu-dropdown .button {
   height: 40px;
 }
-.button:hover {
+.t-header .button:hover {
   cursor: pointer;
 }
 </style>

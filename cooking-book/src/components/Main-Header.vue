@@ -16,7 +16,7 @@
       </section>
     </nav>
 
-    <button class="box-2" id="toggle-menu" @click.prevent="$emit('click')"><img src="@/assets/menu_btn.png" /></button>
+    <button class="box-2" id="toggle-menu"><img src="@/assets/menu_btn.png" /></button>
   </div>
 </template>
 

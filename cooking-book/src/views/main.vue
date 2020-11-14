@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 v-for="t in dish" v-bind:key="t.title">{{ t.title }}</h1>
+    <div v-for="i in dish" v-bind:key="i.img">
+     <img :src="`../assets/${i.img}`"/>
+      <p>{{ i.title }}</p>
+    </div>
   </div>
 </template>
 
@@ -20,11 +23,15 @@ export default {
         .get(path)
         .then((res) => {
           this.dish = res.data.dishes;
+          console.log(this.dish);
         })
         .catch((error) => {
           // eslint-выключение следующей строки
           console.error(error);
         });
+    },
+    itemImage(img) {
+      return require("../assets/" + img);
     },
   },
   created() {

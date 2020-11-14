@@ -22,10 +22,12 @@ def all_dishes():
 
 dishes = [
     {
-        'img': 'category1.png',
+        'id': '1',
+        'img': 'category1.jpg',
         'title': 'Первые блюда',
     },
     {
+        'id': '2',
         'img': 'category2.png',
         'title': 'Вторые блюда',
     },

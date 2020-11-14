@@ -1,20 +1,28 @@
 <template>
   <div>
+    <TopBlock />
+    <BottomBlock />
     <div v-for="i in dish" v-bind:key="i.img">
-     <img :src="`../assets/${i.img}`"/>
-      <p>{{ i.title }}</p>
+      <img :src="itemImage(categories1.jpg)" />
+      <span class="text">{{ i.title }}</span>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import TopBlock from "@/components/Main-Header";
+import BottomBlock from "@/components/Main-Content";
 
 export default {
   data() {
     return {
       dish: [],
     };
+  },
+  components: {
+    TopBlock,
+    BottomBlock
   },
   methods: {
     getMessage() {
@@ -31,14 +39,24 @@ export default {
         });
     },
     itemImage(img) {
-      return require("../assets/" + img);
+      return require("@/assets/" + img);
     },
   },
+  
   created() {
     this.getMessage();
   },
 };
 </script>
 
+<style>
+body {
+  background: #343434!important;
+}
+</style>
+
 <style scoped>
+  .text {
+    color:#fff;
+  }
 </style>

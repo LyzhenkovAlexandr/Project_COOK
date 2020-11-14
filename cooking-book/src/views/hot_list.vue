@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TopBlock />
+    <TopBlock @click="isOpen = !isOpen"/>
     <BottomBlock />
   </div>
 </template>
@@ -11,6 +11,9 @@ import TopBlock from "@/components/Main-Header";
 import BottomBlock from "@/components/hot-plates";
 
 export default {
+  data: () => ({
+    isOpen: true,
+  }),
   components: {
     TopBlock,
     BottomBlock

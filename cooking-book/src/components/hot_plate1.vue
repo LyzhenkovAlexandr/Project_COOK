@@ -21,7 +21,7 @@
         >
 
         <article class="progress_bar">
-          <b-button class="mt-3 button" v-on:click="create">назад</b-button>
+          <b-button class="mt-3 button" v-on:click="left">назад</b-button>
           <b-button class="mt-3 button" v-on:click="create">{{
             title
           }}</b-button>
@@ -69,12 +69,38 @@ export default {
     },
     right: function () {
       let intval = setInterval(() => {
-        
+        if (this.value < this.value + this.i) {
           this.value += 8.34;
+          this.i -= 8.34;
+          this.title = "Продолжить";
+          this.img = "@/assets/hot_1_ingredients.png";
+          this.desc =""
+        } else if (this.value >= 100) {
+          this.title = "Блюдо готово";
+        } else {
+          this.i += 8.34;
+          clearInterval(intval);
+        }
       }, 10);
     },
-  },
-};
+    left: function () {
+      let intval = setInterval(() => {
+        if (this.value > this.value + this.i) {
+          this.value -= 8.34;
+          this.i += 8.34;
+          this.title = "Продолжить";
+          this.img = "@/assets/hot_1_ingredients.png";
+          this.desc =""
+        } else if (this.value <= 0) {
+          this.title = "Запуск";
+        } else {
+          this.i -= 8.34;
+          clearInterval(intval);
+        }
+      }, 10);
+    }
+  }
+}
 </script>
 
 <style scoped>

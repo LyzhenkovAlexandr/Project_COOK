@@ -4,36 +4,31 @@
     <img src="@/assets/logo.png" />
 
 
-    <nav class="menu" id="main-menu">
+    <nav class="menu" id="main-menu" :class="{openMenu: !isClose}">
       <section class="menu-flex-1">
         <section class="menu-dropdown">
-          <button class="button">На главную</button>
-          <button class="button">Закуски</button>
-          <button class="button">Холодные блюда</button>
-          <button class="button">Горячие блюда</button>
-          <button class="button">Десерты</button>
+          <router-link to="/" tag="button" class="button">На главную</router-link>
+          <router-link to="#" tag="button" class="button">Закуски</router-link>
+          <router-link to="#" tag="button" class="button">Холодные блюда</router-link>
+          <router-link to="/hot_list" tag="button" class="button">Горячие блюда</router-link>
+          <router-link to="#" tag="button" class="button">Десерты</router-link>
         </section>
       </section>
     </nav>
 
-    <button class="box-2" id="toggle-menu"><img src="@/assets/menu_btn.png" /></button>
+    <button class="box-2" id="toggle-menu" @click="isClose = !isClose"><img src="@/assets/menu_btn.png" /></button>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 
-// (function () {
-//   let button = document.getElementById("toggle-menu");
-//   button.addEventListener("click", function (event) {
-//     event.preventDefault();
-//     let menu = document.getElementById("main-menu");
-//     menu.classList.toggle("is-open");
-//   });
-// })();
-
 export default {
-  
+  data: () => {
+    return {
+      isClose: true,
+    }
+  },
 };
 </script>
 
@@ -121,13 +116,19 @@ export default {
   display: block;
   position: absolute;
   right: -500px;
-  width: 300px;
+  top: 55px;
+  width: 275px;
   height: 300px;
-  background: rgb(12, 238, 151);
+  padding-bottom: 10px;
+  background:  #001C23;
   transition-duration: 0.9s;
+  -moz-border-radius-bottomleft: 29px;
+  -webkit-border-bottom-left-radius: 29px;
+  border-bottom-left-radius: 29px;
+  border: 2px solid #fff;
+  z-index: 9999;
 }
-.menu.is-open {
-  /* display: block; */
+.menu.openMenu {
   transform: translateX(-500px);
   transition-duration: 0.9s;
 }
@@ -136,6 +137,7 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
+  align-items: center;
 }
 .menu-dropdown {
   display: flex;
@@ -145,6 +147,14 @@ export default {
 }
 .button {
   height: 40px;
+  margin-top: 10px;
+  width: 160px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  border-radius: 8px;
+  outline-width: 0;
+  background: #002630;
+  color: #fff;
 }
 .button:hover {
   cursor: pointer;

@@ -12,7 +12,7 @@ app.config.from_object(__name__)
 CORS(app)
 
 
-@app.route('/Main', methods=['GET'])
+@app.route('/', methods=['GET'])
 def all_dishes():
     return jsonify({
         'status': 'success',

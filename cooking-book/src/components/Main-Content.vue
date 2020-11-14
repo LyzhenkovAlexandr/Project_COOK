@@ -68,6 +68,10 @@ export default {};
   outline-width: 0;
   background: #fff;
 }
+.box button :hover{
+background: #001C23;
+color:#fff;
+}
 .title {
     display: block;
     color: #fff;

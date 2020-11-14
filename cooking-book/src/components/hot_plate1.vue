@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="hot_1">
     <span class="title">Горячие блюда</span>
     <article class="box-line">
       <article class="box">
@@ -16,10 +16,10 @@
           <div id="Bar">
             <div id="Progress" :style="{ width: value + '%' }"></div>
           </div>
-          <span class="mark"
+          <!-- <span class="mark"
             >*Нажав на кнопку запуска таймера несколько раз, можно ускорить ход
             времени</span
-          >
+          > -->
         </article>
       </article>
     </article>
@@ -47,7 +47,7 @@ export default {
           this.i -= 0.1;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
-          this.desc =""
+          this.desc = "";
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
@@ -63,7 +63,7 @@ export default {
           this.i -= 8.34;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
-          this.desc =""
+          this.desc = "";
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
@@ -80,7 +80,7 @@ export default {
           this.i += 8.34;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
-          this.desc =""
+          this.desc = "";
         } else if (this.value <= 0) {
           this.title = "Запуск";
         } else {
@@ -104,13 +104,10 @@ export default {
         });
     },
   },
-  created(){
-
-  }
 }
 </script>
 
-<style scoped>
+<style>
 #Bar {
   margin: 0 10px;
   width: 580px;
@@ -128,14 +125,14 @@ export default {
   border-radius: 8px;
 }
 
-.progress_bar {
+.hot_1 .progress_bar {
   clear: both;
   display: block;
   width: 100%;
   text-align: center;
 }
 
-.progress_bar .button {
+.hot_1 .progress_bar .button {
   float: left;
   margin-bottom: 10px;
   margin-left: 30px;
@@ -149,7 +146,7 @@ export default {
   background: #fff;
 }
 
-.box-line {
+.hot_1 .box-line {
   position: absolute;
   display: block;
   width: 100%;
@@ -157,7 +154,7 @@ export default {
   margin-top: 10px;
 }
 
-.box {
+.hot_1 .box {
   display: inline-block;
   width: 600px;
   min-height: 300px;
@@ -172,22 +169,21 @@ export default {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-.box div {
+.hot_1 .box div {
   height: 210px;
   width: 200px;
   margin: 10px;
   float: left;
   overflow: hidden;
   border-radius: 32px;
-  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
   text-align: center;
 }
-.box img {
+.hot_1 .box img {
   height: 210px;
   margin: 0;
 }
-
-.title {
+.hot_1 .title {
   display: block;
   color: #fff;
   font-size: 25px;
@@ -195,8 +191,7 @@ export default {
   text-align: center;
   padding-top: 15px;
 }
-
-.box .title {
+.hot_1 .box .title {
   color: #000;
   font-size: 20px;
   font-weight: bold;
@@ -205,7 +200,7 @@ export default {
   margin-right: 10px;
 }
 
-.box .desc {
+.hot_1 .box .desc {
   width: 340px;
   margin: 10px 20px 10px 0;
   display: block;
@@ -216,10 +211,63 @@ export default {
   text-indent: 15px;
 }
 
-.mark {
+.hot_1 .mark {
   background: none;
   margin-bottom: -15px;
   float: left;
   width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  #Bar {
+    margin: 0 10px;
+    width: 280px;
+    height: 20px;
+    border-radius: 9px;
+    background-color: #001C23;
+  }
+
+  .hot_1 .progress_bar .button {
+    clear: both;
+    margin-left: 10px;
+    width: 160px;
+    height: 30px;
+  }
+
+  .hot_1 .progress_bar {
+    text-align: center;
+  }
+
+  .hot_1 .box {
+    display: inline-block;
+    width: 300px;
+    min-height: 300px;
+    margin: 10px;
+  }
+  .hot_1 .box div {
+    height: 230px;
+    width: 280px;
+    clear: both;
+    border-radius: 32px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .hot_1 .box img {
+    height: 230px;
+  }
+
+  .hot_1 .box .desc {
+    width: 280px;
+    margin: 10px;
+    clear: both;
+    text-indent: 15px;
+  }
+
+  /* .hot_1 .mark {
+    background: none;
+    margin-bottom: -15px;
+    float: left;
+    width: 100%;
+  } */
 }
 </style>

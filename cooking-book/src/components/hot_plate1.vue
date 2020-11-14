@@ -5,20 +5,7 @@
       <article class="box">
         <div><img src="@/assets/hot_plate_1.jpg" /></div>
         <span class="title">Запечённые свиные рёбрышки</span>
-        <span class="desc"
-          ><b>Ингредиенты</b> <br />
-          Рёбрышки свиные - 1 кг <br />
-          Лук репчатый - 1 шт. <br />
-          Сок лимона - 1 ст. ложка <br />
-          Томатная паста - 1,5 ст. ложки <br />
-          Мёд - 1 ст. ложка <br />
-          Горчица - 0,5 ст. ложки <br />
-          Гвоздика - 2 шт. <br />
-          Перец чёрный горошком - 10 шт. <br />
-          Перец красный молотый - по вкусу<br />
-          Соль - по вкусу <br />
-          Вода - 650 мл</span
-        >
+        <span class="desc">{{desc}}</span>
 
         <article class="progress_bar">
           <b-button class="mt-3 button" v-on:click="left">назад</b-button>
@@ -48,6 +35,8 @@ export default {
       desc:
         "Свиные рёбрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!",
       i: 8.34,
+      current: 0,
+      
     };
   },
   methods: {
@@ -82,6 +71,7 @@ export default {
           clearInterval(intval);
         }
       }, 10);
+      getText()
     },
     left: function () {
       let intval = setInterval(() => {
@@ -98,9 +88,23 @@ export default {
           clearInterval(intval);
         }
       }, 10);
+      getText()
+    },
+        getText() {
+      const path = "http://127.0.0.1:5000/";
+      axios
+        .get(path)
+        .then((res) => {
+          this.dish = res.data.status
+          console.log(this.dish);
+        })
+        .catch((error) => {
+          // eslint-выключение следующей строки
+          console.error(error);
+        });
     },
   },
-};
+}
 </script>
 
 <style>
@@ -109,7 +113,7 @@ export default {
   width: 580px;
   height: 20px;
   border-radius: 9px;
-  background-color: #001C23;
+  background-color: #012d38;
 }
 #Progress {
   position: relative;

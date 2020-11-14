@@ -68,7 +68,15 @@ export default {};
   outline-width: 0;
   background: #fff;
 }
+<<<<<<< HEAD
+.box button :hover{
+background: #001C23;
+color:#fff;
+}
+.title {
+=======
 .main-content .title {
+>>>>>>> 6bfdc8dce0efa39315d782d5a695b4fc9e34dfa7
     display: block;
     color: #fff;
     font-size: 25px;

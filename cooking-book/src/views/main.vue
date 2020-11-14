@@ -43,9 +43,9 @@ export default {
     // },
   },
   
-  created() {
-    this.getMessage();
-  },
+  // created() {
+  //   this.getMessage();
+  // },
 };
 </script>
 

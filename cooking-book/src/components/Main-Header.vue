@@ -1,6 +1,6 @@
 <template>
   <div class="t-header">
-    <router-link tag="div" to="/"  class="logo"><img src="@/assets/logo.png" /></router-link>
+      <div class="logo"><router-link tag="img" to="/" src="@/assets/logo.png" /></div>
     <div class="header">
     <span>Максимастер</span>
     

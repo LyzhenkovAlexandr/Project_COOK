@@ -1,6 +1,6 @@
 <template>
   <section>
-    <span class="title">Закуски</span>
+    <span class="title">Горячие блюда</span>
     <article class="box-line">
       <router-link tag="article" to="/hot_list/hot_1" class="box">
         <div><img src="@/assets/hot_plate_1.jpg" /></div>
@@ -50,7 +50,7 @@ export default {};
   display: block;
   width: 100%;
   text-align: center;
-  margin-top: 35px;
+  margin-top: 15px;
 }
 .box {
   display: inline-block;

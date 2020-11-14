@@ -1,19 +1,38 @@
 <template>
   <section>
-    <span class="title">Закуски</span>
+    <span class="title">Горячие блюда</span>
     <article class="box-line">
       <article class="box">
         <div><img src="@/assets/hot_plate_1.jpg" /></div>
         <span class="title">Запечённые свиные рёбрышки</span>
-        <span class="desc">{{ desc }}</span>
+        <span class="desc"
+          ><b>Ингредиенты</b> <br />
+          Рёбрышки свиные - 1 кг <br />
+          Лук репчатый - 1 шт. <br />
+          Сок лимона - 1 ст. ложка <br />
+          Томатная паста - 1,5 ст. ложки <br />
+          Мёд - 1 ст. ложка <br />
+          Горчица - 0,5 ст. ложки <br />
+          Гвоздика - 2 шт. <br />
+          Перец чёрный горошком - 10 шт. <br />
+          Перец красный молотый - по вкусу<br />
+          Соль - по вкусу <br />
+          Вода - 650 мл</span
+        >
 
         <article class="progress_bar">
+          <b-button class="mt-3 button" v-on:click="create">назад</b-button>
           <b-button class="mt-3 button" v-on:click="create">{{
             title
           }}</b-button>
+          <b-button class="mt-3 button" v-on:click="right">вперед</b-button>
           <div id="Bar">
             <div id="Progress" :style="{ width: value + '%' }"></div>
           </div>
+          <span class="mark"
+            >*Нажав на кнопку запуска таймера несколько раз, можно ускорить ход
+            времени</span
+          >
         </article>
       </article>
     </article>
@@ -28,24 +47,30 @@ export default {
       title: "Начать готовить",
       desc:
         "Свиные рёбрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!",
-      i: 50,
+      i: 8.34,
     };
   },
   methods: {
     create: function () {
       let intval = setInterval(() => {
         if (this.value < this.value + this.i) {
-          this.value += 0.01;
-          this.i -= 0.05;
+          this.value += 0.1;
+          this.i -= 0.1;
           this.title = "Продолжить";
-          this.img = "@/assets/hot_1_ingredients.png"
-          this.desc="Ингредиенты \r\n Рёбрышки свиные - 1 кг\r\nЛук репчатый - 1 шт.\nСок лимона - 1 ст. ложка</br>Томатная паста - 1,5 ст. ложки</br>Мёд - 1 ст. ложка</br>Горчица - 0,5 ст. ложки</br>Гвоздика - 2 шт.</br>Перец чёрный горошком - 10 шт.</br>Перец красный молотый - по вкусу</br>Соль - по вкусу</br>Вода - 650 мл"
+          this.img = "@/assets/hot_1_ingredients.png";
+          this.desc =""
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
-          this.i += 50;
+          this.i += 8.34;
           clearInterval(intval);
         }
+      }, 10);
+    },
+    right: function () {
+      let intval = setInterval(() => {
+        
+          this.value += 8.34;
       }, 10);
     },
   },
@@ -102,7 +127,7 @@ export default {
 .box {
   display: inline-block;
   width: 600px;
-  height: 300px;
+  min-height: 300px;
   background: #FFFFFF;
   box-sizing: border-box;
   box-shadow: 17px 17px 4px rgba(0, 0, 0, 0.25);
@@ -156,5 +181,12 @@ export default {
   font-weight: normal;
   float: right;
   text-indent: 15px;
+}
+
+.mark {
+  background: none;
+  margin-bottom: -15px;
+  float: left;
+  width: 100%;
 }
 </style>

@@ -22,6 +22,9 @@ export default {
 body {
   background: #009DC1!important;
 }
+html {
+  overflow-x:hidden!important;
+}
 </style>
 
 <style scoped>

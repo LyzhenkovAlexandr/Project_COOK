@@ -5,7 +5,7 @@
       <article class="box">
         <div><img src="@/assets/hot_plate_1.jpg" /></div>
         <span class="title">Запечённые свиные рёбрышки</span>
-        <span class="desc">{{desc}}</span>
+        <span class="desc">{{ desc }}</span>
 
         <article class="progress_bar">
           <b-button class="mt-3 button" v-on:click="left">назад</b-button>
@@ -36,7 +36,6 @@ export default {
         "Свиные рёбрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!",
       i: 8.34,
       current: 0,
-      
     };
   },
   methods: {
@@ -71,7 +70,7 @@ export default {
           clearInterval(intval);
         }
       }, 10);
-      getText()
+      getText();
     },
     left: function () {
       let intval = setInterval(() => {
@@ -88,15 +87,15 @@ export default {
           clearInterval(intval);
         }
       }, 10);
-      getText()
+      getText();
     },
-        getText() {
+    getText() {
       const path = "http://127.0.0.1:5000/";
       axios
         .get(path)
         .then((res) => {
-          this.dish = res.data.status
-          console.log(this.dish);
+          this.checkpoint = res.data.checkpoints;
+          console.log(this.checkpoint);
         })
         .catch((error) => {
           // eslint-выключение следующей строки
@@ -104,7 +103,10 @@ export default {
         });
     },
   },
-}
+  created() {
+    this.getText();
+  },
+};
 </script>
 
 <style>
@@ -218,7 +220,7 @@ export default {
   width: 100%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 500px) {
   #Bar {
     margin: 0 10px;
     width: 280px;

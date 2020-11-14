@@ -1,6 +1,6 @@
 <template>
   <div class="t-header">
-      <div class="logo"><router-link tag="img" to="/" src="@/assets/logo.png" /></div>
+      <div class="logo"><router-link to="/"> <img src="@/assets/logo.png" /></router-link></div>
     <div class="header">
     <span>Максимастер</span>
     
@@ -8,8 +8,6 @@
 
 
     <nav class="menu" id="main-menu" :class="{openMenu: !isClose}">
-
-    <nav class="menu" id="main-menu">
       <section class="menu-flex-1">
         <section class="menu-dropdown">
           <router-link to="/" tag="button" class="button">На главную</router-link>
@@ -24,9 +22,7 @@
 
     <button class="box-2" id="toggle-menu" @click="isClose = !isClose"><img src="@/assets/menu_btn.png" /></button>
   </div>
-
-    <button class="box-2" id="toggle-menu"><img src="@/assets/menu_btn.png" /></button>
-
+  </div>
 </template>
 
 <script>
@@ -36,7 +32,7 @@ export default {
   data: () => {
     return {
       isClose: true,
-    }
+    };
   },
 };
 </script>
@@ -71,7 +67,7 @@ export default {
   line-height: 18px;
   float: right;
   padding-right: 26px;
-  padding-left:0;
+  padding-left: 0;
 }
 
 .t-header .header > button img {
@@ -82,22 +78,23 @@ export default {
 .t-header .logo {
   position: absolute;
   top: 6.5px;
-  width: 100%;
-  height:40px;
+  width: 90%;
+  margin: 0 5%;
+  height: 40px;
   text-align: center;
 }
 
-.t-header .logo > img {
+.t-header .logo img {
   margin: 0 auto;
   height: 40px;
 }
 
 @media only screen and (max-width: 500px) {
- .t-header .logo > img {
-  margin: 0 auto;
-  height: 40px;
-  padding-left: 100px;
-}
+  .t-header .logo > img {
+    margin: 0 auto;
+    height: 40px;
+    padding-left: 100px;
+  }
 }
 .t-header .box-1 {
   padding-left: 20px;
@@ -126,7 +123,7 @@ export default {
   top: 0.4em;
   right: 0.3em;
   display: block;
-  background: url("") ;
+  background: url("");
   text-indent: 0;
   cursor: pointer;
 }
@@ -138,7 +135,7 @@ export default {
   width: 275px;
   height: 300px;
   padding-bottom: 10px;
-  background:  #001C23;
+  background: #001C23;
   transition-duration: 0.9s;
   -moz-border-radius-bottomleft: 29px;
   -webkit-border-bottom-left-radius: 29px;

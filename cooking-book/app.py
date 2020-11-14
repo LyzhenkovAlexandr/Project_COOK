@@ -15,12 +15,11 @@ CORS(app)
 @app.route('/', methods=['GET'])
 def all_dishes():
     return jsonify({
-        'status': 'success',
-        'dishes': dishes
+        'checkpoints': checkpoints
     })
 
 
-dishes = [
+checkpoints = [
     {
         'id': '1',
         'img': 'category1.jpg',

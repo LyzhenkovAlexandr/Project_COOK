@@ -1,25 +1,29 @@
 <template>
   <section>
-    <span>Рецепты</span>
-    <span
+    <span class="title">Рецепты</span>
+    <span class="desc"
       >Ищете рецепт? Тогда наш сайт идеально для вас подходит! Выберете наиболее
       подходящую для вас категорию блюд и увидите список всех доступных
       рецептов. Удачной готовки!
     </span>
     <article class="box-line">
       <article class="box">
+          <img src="@/assets/category1.png">
         <button>Закуски</button>
       </article>
 
       <article class="box">
+          <img src="@/assets/category2.png">
         <button>Холодные блюда</button>
       </article>
 
       <article class="box">
-        <button>Горячие блюда</button>
+          <img src="@/assets/category3.png">
+        <router-link to="/hot_list" tag="button">Горячие блюда</router-link>
       </article>
 
       <article class="box">
+          <img src="@/assets/category4.png">
         <button>Десерты</button>
       </article>
     </article>
@@ -30,13 +34,13 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .box-line {
   position: absolute;
   display: block;
   width: 100%;
   text-align: center;
-  margin-top: 150px;
+  margin-top: 35px;
 }
 .box {
   display: inline-block;
@@ -46,21 +50,40 @@ export default {};
   box-sizing: border-box;
   box-shadow: 17px 17px 4px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
-  margin-right: 25px;
+  margin: 12px;
 }
-.box:last-child {
-  margin-right: 0;
+
+.box img {
+    width:160px;
+    height: 160px;
 }
 .box button {
-    position: relative;
-    top:0;
-  width: 180px;
-  height: 40px;
+    margin-top: 10px;
+  width: 160px;
+  height: 30px;
 
   border: 1.5px solid #000000;
   box-sizing: border-box;
   border-radius: 8px;
   outline-width: 0;
   background: #fff;
+}
+.title {
+    display: block;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.desc {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 8px;
+    padding: 0 17%;
 }
 </style>

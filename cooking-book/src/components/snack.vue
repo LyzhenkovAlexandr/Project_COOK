@@ -2,19 +2,19 @@
   <section class="hot-plates">
     <span class="title">Закуски</span>
     <article class="box-line">
-      <router-link tag="article" to="" class="box">
-        <div><img src="@/assets/snack_plate_1.jpg" /></div>
-        <span class="title">Канапе с колбасой и сыром</span>
-        <span class="desc"
-          >Простая в приготовлении, красивая, вкусная праздничная закуска для семейного новогоднего меню - канапе с колбасой и сыром.</span
-        >
-      </router-link>
-
-      <article class="box">
+      <router-link tag="article" to="/Snack_list/snack_1" class="box">
         <div><img src="@/assets/snack_plate_2.jpg" /></div>
         <span class="title">Сырные палочки</span>
         <span class="desc"
           >Простой, но очень вкусный рецепт домашних сырных палочек. Пальчики оближешь! Минимум продуктов и максимум удовольствия, а с приготовлением справится даже ребёнок.</span
+        >
+      </router-link>
+
+      <article class="box">
+        <div><img src="@/assets/snack_plate_1.jpg" /></div>
+        <span class="title">Канапе с колбасой и сыром</span>
+        <span class="desc"
+          >Простая в приготовлении, красивая, вкусная праздничная закуска для семейного новогоднего меню - канапе с колбасой и сыром.</span
         >
       </article>
 

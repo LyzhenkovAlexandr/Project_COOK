@@ -1,39 +1,28 @@
 <template>
   <section class="hot_1">
-    <span class="title">Салаты</span>
+    <span class="title">Закуски</span>
     <article class="box-line">
       <article class="box">
-        <div><img src="@/assets/cold_plate_1.jpg" /></div>
-        <span class="title">Салат Цезарь</span>
-        <span class="desc" v-if="this.value==0">Салат цезарь в нашу жизнь вошёл недавно, но за короткое время успел завоевать наши сердца и желудки.</span>
-        <span class="desc" v-else-if="0<this.value && this.value<=10.1"><strong>Ингредиенты</strong><br>
-          Салат айсберг или подобный - 200 г                <br>
-          Сыр пармезан – 50 г                  <br>
-          Хлеб чиабатта (или белый батон) - 100 г                <br>
-          Чеснок - 1 зубчик          <br>
-          Масло оливковое - 1 ст. л.                    <br>
-          Соль - по вкусу              <br>
-          Перец черный молотый - по вкусу                     <br>
-          Заправка для салата "Цезарь" - 4-5 ст. ложек   <br>
-          <b>Для заправки:</b>      <br>
-          Горчица - 1 ч. л.  <br>
-          Кефир - 2 ст. л.                  <br>
-          Масло оливковое - 2 ст. л.    <br>
-          Желток растертый - 1 шт.<br>
-          Соль - по вкусу<br>
-          Соус соевый (по желанию) - 1 ст. л. <br>
-          Орегано - 1 щепотка                   <br></span>
+        <div v-if="this.value==0"><img src="@/assets/snack_plate_2.jpg" /></div>
+        <span class="title">Сырные палочки</span>
+        <span class="desc" v-if="this.value==0">Простой, но очень вкусный рецепт домашних сырных палочек. Пальчики оближешь! Минимум продуктов и максимум удовольствия, а с приготовлением справится даже ребёнок</span>
+        <span class="desc" v-else-if="0<this.value && this.value<=20.1"><strong>Ингредиенты</strong><br>
+          Сыр твердый - 300 г              <br>
+          Яйцо - 1 шт.                                   <br>
+          Мука - 30 г                <br>
+          Масло растительное - 70 мл                                <br></span>
 
-        <span class="desc" v-else-if="10.1<this.value && this.value <=20.2">Подготовьте все ингредиенты для приготовления классического салата "Цезарь"</span>
-        <span class="desc" v-else-if="20.2<this.value && this.value <=30.2">Как приготовить салат "Цезарь" классический: Чиабатту или белый батон нарежьте тонкими брусочками.</span>
-        <span class="desc" v-else-if="30.2<this.value && this.value <=40.2">Сбрызните хлеб оливковым маслом, немного посолите и смажьте измельченным чесноком.</span>
-        <span class="desc" v-else-if="40.2<this.value && this.value <=50.2">Обжарьте чиабатту на сухой сковороде с обеих сторон до румяной корочки.</span>
-        <span class="desc" v-else-if="50.2<this.value && this.value <=60.2">Натрите пармезан на мелкой терке или измельчите на специальной терке для твердых сыров.</span>
-        <span class="desc" v-else-if="60.2<this.value && this.value <=70.2">На порционную тарелку нарвите руками листья салата.</span>
-        <span class="desc" v-else-if="70.2<this.value && this.value <=80.1">Сверху выложите ложку натертого пармезана.</span>
-        <span class="desc" v-else-if="80.1<this.value && this.value <=90.1">Для заправки смешайте растертый желток, 1 чайную ложку горчицы, 2 столовых ложки кефира, 2 столовых ложки оливкового масла, немного соли, по желанию 1 столовую ложку соевого соуса и щепотку орегано. Налейте несколько ложек заправки в салат. Перемешайте салат цезарь.</span>
-        <span class="desc" v-else-if="90.2<this.value && this.value <=100.1">Сверху немного посыпьте салат натертым на мелкой терке сыром и выложите сухарики. Салат "Цезарь" классический готов. <br><br><b>Приятного аппетита!</b></span>
+        <span class="desc" v-else-if="20.1<this.value && this.value <=40.1">Приготовим продукты для сырных палочек.</span>
+        <span class="desc" v-else-if="40.1<this.value && this.value <=60.1">Сыр натереть на мелкой терке, добавить муку, яйцо. Перемешать. Сформировать сырные палочки.</span>
+        <span class="desc" v-else-if="60.1<this.value && this.value <=80">Обжарить их в растительном масле до золотистого цвета.</span>
+        <span class="desc" v-else-if="80<this.value && this.value <=100">Сырные палочки готовы! <br><br><b>Приятного аппетита!</b></span>
         <span class="desc" v-else>Прятного аппетита!</span>
+
+        <div v-if="0<this.value && this.value<=20.1"><img src="@/assets/snack_plate_2.jpg" /></div>
+        <div v-else-if="20.1<this.value && this.value <=40.1"><img src="@/assets/snack_recept_1.jpg" /></div>
+        <div v-else-if="40.1<this.value && this.value <=60.1"><img src="@/assets/snack_recept_2.jpg" /></div>
+        <div v-else-if="60.1<this.value && this.value <=80"><img src="@/assets/snack_recept_3.jpg" /></div>
+        <div v-else-if="80<this.value && this.value <=100"><img src="@/assets/snack_recept_4.jpg" /></div>
 
         <article class="progress_bar">
           <b-button class="mt-3 button" v-on:click="left">Вернуться на шаг</b-button>
@@ -64,7 +53,7 @@ export default {
       title: "Начать готовить",
       desc:
         "Свиные рёбрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!",
-      i: 10,
+      i: 20,
       current: 0,
       cards: [],
     };
@@ -84,24 +73,24 @@ export default {
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
-          this.i += 10;
+          this.i += 20;
           clearInterval(intval);
         }
-      }, 50);
+      }, 1);
       this.getCard()
     },
     right: function () {
       let intval = setInterval(() => {
         if (this.value < this.value + this.i) {
-          this.value += 10;
-          this.i -= 10;
+          this.value += 20;
+          this.i -= 20;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
           this.desc = "";
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
-          this.i += 10;
+          this.i += 20;
           clearInterval(intval);
         }
       }, 10);
@@ -110,15 +99,15 @@ export default {
     left: function () {
       let intval = setInterval(() => {
         if (this.value > this.value + this.i) {
-          this.value -= 10;
-          this.i += 10;
+          this.value -= 20;
+          this.i += 20;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
           this.desc = "";
         } else if (this.value <= 0) {
           this.title = "Запуск";
         } else {
-          this.i -= 10;
+          this.i -= 20;
           clearInterval(intval);
         }
       }, 10);

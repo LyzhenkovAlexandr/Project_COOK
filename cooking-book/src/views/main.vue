@@ -2,6 +2,7 @@
   <div>
     <TopBlock />
     <BottomBlock />
+    <Footer />
     <!-- <div v-for="i in dish" v-bind:key="i.img">
       <img :src="itemImage(categories1.jpg)" />
       <span class="text">{{ i.title }}</span>
@@ -13,6 +14,7 @@
 import axios from "axios";
 import TopBlock from "@/components/Main-Header";
 import BottomBlock from "@/components/Main-Content";
+import Footer from "@/components/Footer";
 
 export default {
   data() {
@@ -22,7 +24,8 @@ export default {
   },
   components: {
     TopBlock,
-    BottomBlock
+    BottomBlock,
+    Footer
   },
   methods: {
     // getMessage() {

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TopBlock @click="isOpen = !isOpen"/>
-    <BottomBlock />
+    <TopBlock />
+    <ColdPlate1 />
     <Footer />
   </div>
 </template>
@@ -9,16 +9,13 @@
 <script>
 import axios from "axios";
 import TopBlock from "@/components/Main-Header";
-import BottomBlock from "@/components/hot-plates";
+import ColdPlate1 from "@/components/cold_plate1";
 import Footer from "@/components/Footer";
 
 export default {
-  data: () => ({
-    isOpen: true,
-  }),
   components: {
     TopBlock,
-    BottomBlock,
+    ColdPlate1,
     Footer
   },
 };
@@ -31,6 +28,7 @@ body {
 html {
   overflow-x:hidden!important;
 }
+
 .text {
   color: #fff;
 }

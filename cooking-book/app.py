@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 from flask_cors import CORS
 
 # configuration
@@ -11,34 +11,29 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app)
 
-
-@app.route('/', methods=['GET'])
-def all_dishes():
+# sanity check route
+@app.route('/hot_list/hot_1', methods=['GET'])
+def all_card():
     return jsonify({
-        'checkpoints': checkpoints
+        'status': 'success',
+        'card': CARD
     })
-
-
-checkpoints = [
-    {
-        'id': '1',
-        'img': 'category1.jpg',
-        'title': 'Первые блюда',
-    },
-    {
-        'id': '2',
-        'img': 'category2.png',
-        'title': 'Вторые блюда',
-    },
-    {
-        'img': 'category3.png',
-        'title': 'Десерты',
-    },
-    {
-        'img': 'category4.png',
-        'title': 'Закуски',
-    }
+CARD = [
+{
+    'title': 'text1',
+    'text': 'text1',
+    'id': '1',
+},
+{
+    'title': 'text2',
+    'text': 'text2',
+    'id': '2',
+},
+{
+    'title': 'text3',
+    'text': 'text3',
+    'id': '3',
+},
 ]
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

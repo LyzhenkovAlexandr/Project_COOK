@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopBlock @click="isOpen = !isOpen"/>
-    <BottomBlock />
+    <Snack />
     <Footer />
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import axios from "axios";
 import TopBlock from "@/components/Main-Header";
-import BottomBlock from "@/components/hot-plates";
+import Snack from "@/components/snack";
 import Footer from "@/components/Footer";
 
 export default {
@@ -18,7 +18,7 @@ export default {
   }),
   components: {
     TopBlock,
-    BottomBlock,
+    Snack,
     Footer
   },
 };

@@ -2,7 +2,7 @@
   <div class="t-header">
       <div class="logo"><router-link to="/"> <img src="@/assets/logo.png" /></router-link></div>
     <div class="header">
-    <span>Максимастер</span>
+    <a href="https://maximaster.ru/">Максимастер</a>
     
 
 
@@ -11,10 +11,10 @@
       <section class="menu-flex-1">
         <section class="menu-dropdown">
           <router-link to="/" tag="button" class="button">На главную</router-link>
-          <router-link to="#" tag="button" class="button">Закуски</router-link>
-          <router-link to="#" tag="button" class="button">Холодные блюда</router-link>
+          <router-link to="/snack" tag="button" class="button">Закуски</router-link>
+          <router-link to="/cold_list" tag="button" class="button">Салаты</router-link>
           <router-link to="/hot_list" tag="button" class="button">Горячие блюда</router-link>
-          <router-link to="#" tag="button" class="button">Десерты</router-link>
+          <router-link to="/desert" tag="button" class="button">Десерты</router-link>
         </section>
       </section>
     </nav>
@@ -46,7 +46,8 @@ export default {
   text-align: center;
 }
 
-.t-header .header > span {
+.t-header .header > a {
+  text-decoration: none;
   font-family: SF UI Text;
   font-size: 20px;
   font-style: normal;
@@ -78,8 +79,8 @@ export default {
 .t-header .logo {
   position: absolute;
   top: 6.5px;
-  width: 90%;
-  margin: 0 5%;
+  width: 84%;
+  margin: 0 8%;
   height: 40px;
   text-align: center;
 }
@@ -93,7 +94,12 @@ export default {
   .t-header .logo > img {
     margin: 0 auto;
     height: 40px;
-    padding-left: 100px;
+    padding-left: 200px;
+  }
+  .t-header .header > a {
+  text-decoration: none;
+  font-family: SF UI Text;
+  font-size: 17px;
   }
 }
 .t-header .box-1 {
@@ -176,4 +182,5 @@ export default {
 .t-header .button:hover {
   cursor: pointer;
 }
+
 </style>

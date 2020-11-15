@@ -1,25 +1,30 @@
 <template>
   <section class="hot_1">
-    <span class="title">Горячие блюда</span>
+    <span class="title">Салаты</span>
     <article class="box-line">
       <article class="box">
-        <div><img src="@/assets/hot_plate_1.jpg" /></div>
-        <span class="title">Запечённые свиные рёбрышки</span>
-        <span class="desc" v-if="this.value==0">Свиные ребрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!</span>
-        <span class="desc" v-else-if="0<this.value && this.value<=8.4"><strong>Ингредиенты</strong><br>
-          Рёбрышки свиные - 1 кг <br>
-          Лук репчатый - 1 шт.  <br>
-          Сок лимона - 1 ст. ложка<br>
-          Томатная паста - 1,5 ст. ложки<br>
-          Мёд - 1 ст. ложка<br>
-          Горчица - 0,5 ст. ложки<br>
-          Гвоздика - 2 шт.<br>
-          Перец чёрный горошком - 10 шт.<br>
-          Перец красный молотый - по вкусу<br>
+        <div><img src="@/assets/cold_plate_1.jpg" /></div>
+        <span class="title">Салат Цезарь</span>
+        <span class="desc" v-if="this.value==0">Салат цезарь в нашу жизнь вошёл недавно, но за короткое время успел завоевать наши сердца и желудки.</span>
+        <span class="desc" v-else-if="0<this.value && this.value<=10"><strong>Ингредиенты</strong><br>
+          Салат айсберг или подобный - 200 г                <br>
+          Сыр пармезан – 50 г                  <br>
+          Хлеб чиабатта (или белый батон) - 100 г                <br>
+          Чеснок - 1 зубчик          <br>
+          Масло оливковое - 1 ст. л.                    <br>
+          Соль - по вкусу              <br>
+          Перец черный молотый - по вкусу                     <br>
+          Заправка для салата "Цезарь" - 4-5 ст. ложек   <br>
+          <b>Для заправки:</b>      <br>
+          Горчица - 1 ч. л.  <br>
+          Кефир - 2 ст. л.                  <br>
+          Масло оливковое - 2 ст. л.    <br>
+          Желток растертый - 1 шт.<br>
           Соль - по вкусу<br>
-          Вода - 650 мл<br></span>
+          Соус соевый (по желанию) - 1 ст. л. <br>
+          Орегано - 1 щепотка                   <br></span>
 
-        <span class="desc" v-else-if="8.5<this.value && this.value <=16.8">В кастрюлю налейте воду, всыпьте соль, чёрный перец горошком и гвоздику.</span>
+        <span class="desc" v-else-if="10<this.value && this.value <=16.8">В кастрюлю налейте воду, всыпьте соль, чёрный перец горошком и гвоздику.</span>
         <span class="desc" v-else-if="16.8<this.value && this.value <=25.2">Лук очистите и крупно нарежьте и также добавьте в кастрюлю. Туда же влейте лимонный сок, добавьте томатную пасту и красный молотый перец. Перемешайте, поставьте кастрюлю на плиту, варите маринад после закипания 15 минут.</span>
         <span class="desc" v-else-if="25.2<this.value && this.value <=33.5">Свиные рёбра нарежьте на порционные кусочки.</span>
         <span class="desc" v-else-if="33.5<this.value && this.value <=41.9">Опустите свиные рёбрышки в кипящий маринад.</span>
@@ -28,8 +33,6 @@
         <span class="desc" v-else-if="58.5<this.value && this.value <=66.9">Сам маринад процедите.</span>
         <span class="desc" v-else-if="66.9<this.value && this.value <=75.2">Из всего объёма маринада отлейте 1,5 стакана, остальной нам не понадобится. Добавьте в процеженный маринад мёд, горчицу, соль, красный острый перец и уварите 15 минут на сильном огне, не накрывая крышкой.</span>
         <span class="desc" v-else-if="75.2<this.value && this.value <=83.6">В форму для запекания перелейте уваренный маринад и выложите в него свиные рёбра.</span>
-        <span class="desc" v-else-if="83.6<this.value && this.value <=91.9">Запекайте рёбрышки, периодически поливая маринадом, в предварительно разогретой до 220 градусов духовке по 10-12 минут с каждой стороны.</span>
-        <span class="desc" v-else-if="91.9<this.value && this.value <=100.2">Свиные рёбрышки, запечённые в духовке, готовы. Подавайте рёбра в горячем виде. С картофельным пюре такие рёбрышки станут прекрасным обеденным блюдом, а соус, в котором рёбра запекались, будет приятным бонусом в качестве подливки для гарнира! <br><br><strong>Прятного аппетита.</strong></span>
         <span class="desc" v-else>Прятного аппетита!</span>
 
         <article class="progress_bar">
@@ -61,7 +64,7 @@ export default {
       title: "Начать готовить",
       desc:
         "Свиные рёбрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!",
-      i: 8.34,
+      i: 10,
       current: 0,
       cards: [],
     };
@@ -81,7 +84,7 @@ export default {
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
-          this.i += 8.34;
+          this.i += 10;
           clearInterval(intval);
         }
       }, 50);
@@ -90,15 +93,15 @@ export default {
     right: function () {
       let intval = setInterval(() => {
         if (this.value < this.value + this.i) {
-          this.value += 8.34;
-          this.i -= 8.34;
+          this.value += 10;
+          this.i -= 10;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
           this.desc = "";
         } else if (this.value >= 100) {
           this.title = "Блюдо готово";
         } else {
-          this.i += 8.34;
+          this.i += 10;
           clearInterval(intval);
         }
       }, 10);
@@ -107,15 +110,15 @@ export default {
     left: function () {
       let intval = setInterval(() => {
         if (this.value > this.value + this.i) {
-          this.value -= 8.34;
-          this.i += 8.34;
+          this.value -= 10;
+          this.i += 10;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";
           this.desc = "";
         } else if (this.value <= 0) {
           this.title = "Запуск";
         } else {
-          this.i -= 8.34;
+          this.i -= 10;
           clearInterval(intval);
         }
       }, 10);

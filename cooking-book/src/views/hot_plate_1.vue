@@ -2,6 +2,7 @@
   <div>
     <TopBlock />
     <BottomBlock />
+    <Footer />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 import axios from "axios";
 import TopBlock from "@/components/Main-Header";
 import BottomBlock from "@/components/hot_plate1";
+import Footer from "@/components/Footer";
 
 export default {
   components: {
     TopBlock,
-    BottomBlock
+    BottomBlock,
+    Footer
   },
 };
 </script>

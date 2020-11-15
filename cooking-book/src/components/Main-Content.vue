@@ -9,12 +9,12 @@
     <article class="box-line">
       <article class="box">
           <img src="@/assets/category1.png">
-        <button>Закуски</button>
+        <router-link to="/snack" tag="button">Закуски</router-link>
       </article>
 
       <article class="box">
           <img src="@/assets/category2.png">
-        <button>Холодные блюда</button>
+        <router-link to="/cold_list" tag="button">Салаты</router-link>
       </article>
 
       <article class="box">
@@ -24,7 +24,7 @@
 
       <article class="box">
           <img src="@/assets/category4.png">
-        <button>Десерты</button>
+        <router-link to="/desert" tag="button">Десерты</router-link>
       </article>
     </article>
   </section>

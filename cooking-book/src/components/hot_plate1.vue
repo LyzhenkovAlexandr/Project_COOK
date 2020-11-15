@@ -3,7 +3,7 @@
     <span class="title">Горячие блюда</span>
     <article class="box-line">
       <article class="box">
-        <div><img src="@/assets/hot_plate_1.jpg" /></div>
+        <div v-if="this.value==0"><img src="@/assets/hot_plate_1.jpg" /></div>
         <span class="title">Запечённые свиные рёбрышки</span>
         <span class="desc" v-if="this.value==0">Свиные ребрышки в пикантном томатно-медовом маринаде, буквально тающие во рту!</span>
         <span class="desc" v-else-if="0<this.value && this.value<=8.4"><strong>Ингредиенты</strong><br>
@@ -31,6 +31,19 @@
         <span class="desc" v-else-if="83.6<this.value && this.value <=91.9">Запекайте рёбрышки, периодически поливая маринадом, в предварительно разогретой до 220 градусов духовке по 10-12 минут с каждой стороны.</span>
         <span class="desc" v-else-if="91.9<this.value && this.value <=100.2">Свиные рёбрышки, запечённые в духовке, готовы. Подавайте рёбра в горячем виде. С картофельным пюре такие рёбрышки станут прекрасным обеденным блюдом, а соус, в котором рёбра запекались, будет приятным бонусом в качестве подливки для гарнира! <br><br><strong>Прятного аппетита.</strong></span>
         <span class="desc" v-else>Прятного аппетита!</span>
+
+        <div v-if="0<this.value && this.value<=8.4">><img src="@/assets/hot_recept_1.jpg" /></div>
+        <div v-else-if="8.5<this.value && this.value <=16.8"><img src="@/assets/hot_recept_2.jpg" /></div>
+        <div v-else-if="16.8<this.value && this.value <=25.2"><img src="@/assets/hot_recept_3.jpg" /></div>
+        <div v-else-if="25.2<this.value && this.value <=33.5"><img src="@/assets/hot_recept_4.jpg" /></div>
+        <div v-else-if="33.5<this.value && this.value <=41.9"><img src="@/assets/hot_recept_5.jpg" /></div>
+        <div v-else-if="41.9<this.value && this.value <=50.2"><img src="@/assets/hot_recept_6.jpg" /></div>
+        <div v-else-if="50.2<this.value && this.value <=58.5"><img src="@/assets/hot_recept_7.jpg" /></div>
+        <div v-else-if="58.5<this.value && this.value <=66.9"><img src="@/assets/hot_recept_8.jpg" /></div>
+        <div v-else-if="66.9<this.value && this.value <=75.2"><img src="@/assets/hot_recept_9.jpg" /></div>
+        <div v-else-if="75.2<this.value && this.value <=83.6"><img src="@/assets/hot_recept_10.jpg" /></div>
+        <div v-else-if="83.6<this.value && this.value <=91.9"><img src="@/assets/hot_recept_11.jpg" /></div>
+        <div v-else-if="91.9<this.value && this.value <=100.2"><img src="@/assets/hot_recept_12.jpg" /></div>
 
         <article class="progress_bar">
           <b-button class="mt-3 button" v-on:click="left">Вернуться на шаг</b-button>
@@ -84,7 +97,7 @@ export default {
           this.i += 8.34;
           clearInterval(intval);
         }
-      }, 50);
+      }, 10);
       this.getCard()
     },
     right: function () {

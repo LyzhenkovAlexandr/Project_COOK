@@ -99,7 +99,7 @@ export default {
           this.i += 10;
           clearInterval(intval);
         }
-      }, 10);
+      }, 50);
       this.getCard()
     },
     right: function () {

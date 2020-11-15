@@ -3,7 +3,7 @@
     <span class="title">Салаты</span>
     <article class="box-line">
       <article class="box">
-        <div><img src="@/assets/cold_plate_1.jpg" /></div>
+        <div v-if="this.value==0"><img src="@/assets/cold_plate_1.jpg" /></div>
         <span class="title">Салат Цезарь</span>
         <span class="desc" v-if="this.value==0">Салат цезарь в нашу жизнь вошёл недавно, но за короткое время успел завоевать наши сердца и желудки.</span>
         <span class="desc" v-else-if="0<this.value && this.value<=10.1"><strong>Ингредиенты</strong><br>
@@ -31,9 +31,21 @@
         <span class="desc" v-else-if="50.2<this.value && this.value <=60.2">Натрите пармезан на мелкой терке или измельчите на специальной терке для твердых сыров.</span>
         <span class="desc" v-else-if="60.2<this.value && this.value <=70.2">На порционную тарелку нарвите руками листья салата.</span>
         <span class="desc" v-else-if="70.2<this.value && this.value <=80.1">Сверху выложите ложку натертого пармезана.</span>
-        <span class="desc" v-else-if="80.1<this.value && this.value <=90.1">Для заправки смешайте растертый желток, 1 чайную ложку горчицы, 2 столовых ложки кефира, 2 столовых ложки оливкового масла, немного соли, по желанию 1 столовую ложку соевого соуса и щепотку орегано. Налейте несколько ложек заправки в салат. Перемешайте салат цезарь.</span>
+        <span class="desc" v-else-if="80.1<this.value && this.value <=90.2">Для заправки смешайте растертый желток, 1 чайную ложку горчицы, 2 столовых ложки кефира, 2 столовых ложки оливкового масла, немного соли, по желанию 1 столовую ложку соевого соуса и щепотку орегано. Налейте несколько ложек заправки в салат. Перемешайте салат цезарь.</span>
         <span class="desc" v-else-if="90.2<this.value && this.value <=100.1">Сверху немного посыпьте салат натертым на мелкой терке сыром и выложите сухарики. Салат "Цезарь" классический готов. <br><br><b>Приятного аппетита!</b></span>
         <span class="desc" v-else>Прятного аппетита!</span>
+
+
+        <div v-if="0<this.value && this.value<=10.1"><img src="@/assets/cold_plate_1.jpg" /></div>
+        <div v-else-if="10.1<this.value && this.value <=20.2"><img src="@/assets/cold_recept_1.jpg" /></div>
+        <div v-else-if="20.2<this.value && this.value <=30.2"><img src="@/assets/cold_recept_2.jpg" /></div>
+        <div v-else-if="30.2<this.value && this.value <=40.2"><img src="@/assets/cold_recept_3.jpg" /></div>
+        <div v-else-if="40.2<this.value && this.value <=50.2"><img src="@/assets/cold_recept_4.jpg" /></div>
+        <div v-else-if="50.2<this.value && this.value <=60.2"><img src="@/assets/cold_recept_5.jpg" /></div>
+        <div v-else-if="60.2<this.value && this.value <=70.2"><img src="@/assets/cold_recept_6.jpg" /></div>
+        <div v-else-if="70.2<this.value && this.value <=80.1"><img src="@/assets/cold_recept_7.jpg" /></div>
+        <div v-else-if="80.1<this.value && this.value <=90.2"><img src="@/assets/cold_recept_8.jpg" /></div>
+        <div v-else-if="90.2<this.value && this.value <=100.1"><img src="@/assets/cold_recept_9.jpg" /></div>
 
         <article class="progress_bar">
           <b-button class="mt-3 button" v-on:click="left">Вернуться на шаг</b-button>
@@ -87,7 +99,7 @@ export default {
           this.i += 10;
           clearInterval(intval);
         }
-      }, 50);
+      }, 10);
       this.getCard()
     },
     right: function () {
@@ -110,7 +122,7 @@ export default {
     left: function () {
       let intval = setInterval(() => {
         if (this.value > this.value + this.i) {
-          this.value -= 10;
+          this.value -= 10.1;
           this.i += 10;
           this.title = "Продолжить";
           this.img = "@/assets/hot_1_ingredients.png";

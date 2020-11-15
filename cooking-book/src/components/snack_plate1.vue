@@ -76,7 +76,7 @@ export default {
           this.i += 20;
           clearInterval(intval);
         }
-      }, 1);
+      }, 50);
       this.getCard()
     },
     right: function () {

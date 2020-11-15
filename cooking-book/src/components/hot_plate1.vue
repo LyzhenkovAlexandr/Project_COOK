@@ -97,7 +97,7 @@ export default {
           this.i += 8.34;
           clearInterval(intval);
         }
-      }, 10);
+      }, 50);
       this.getCard()
     },
     right: function () {

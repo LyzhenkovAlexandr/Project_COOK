@@ -2,11 +2,8 @@
   <div class="t-header">
       <div class="logo"><router-link to="/"> <img src="@/assets/logo.png" /></router-link></div>
     <div class="header">
-    <a href="https://maximaster.ru/">Максимастер</a>
+    <a href="https://www.lyceum-2.ru/">Лицей №2</a>
     
-
-
-
     <nav class="menu" id="main-menu" :class="{openMenu: !isClose}">
       <section class="menu-flex-1">
         <section class="menu-dropdown">
@@ -19,8 +16,8 @@
       </section>
     </nav>
 
-
-    <button class="box-2" id="toggle-menu" @click="isClose = !isClose"><img src="@/assets/menu_btn.png" /></button>
+    <button class="box-2" id="toggle-menu" @click="isClose = !isClose">
+      <img src="@/assets/menu_btn.png" /></button>
   </div>
   </div>
 </template>

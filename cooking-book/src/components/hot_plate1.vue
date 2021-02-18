@@ -32,7 +32,7 @@
         <span class="desc" v-else-if="91.9<this.value && this.value <=100.2">Свиные рёбрышки, запечённые в духовке, готовы. Подавайте рёбра в горячем виде. С картофельным пюре такие рёбрышки станут прекрасным обеденным блюдом, а соус, в котором рёбра запекались, будет приятным бонусом в качестве подливки для гарнира! <br><br><strong>Прятного аппетита.</strong></span>
         <span class="desc" v-else>Прятного аппетита!</span>
 
-        <div v-if="0<this.value && this.value<=8.4">><img src="@/assets/hot_recept_1.jpg" /></div>
+        <div v-if="0<this.value && this.value<=8.4"><img src="@/assets/hot_recept_1.jpg" /></div>
         <div v-else-if="8.5<this.value && this.value <=16.8"><img src="@/assets/hot_recept_2.jpg" /></div>
         <div v-else-if="16.8<this.value && this.value <=25.2"><img src="@/assets/hot_recept_3.jpg" /></div>
         <div v-else-if="25.2<this.value && this.value <=33.5"><img src="@/assets/hot_recept_4.jpg" /></div>

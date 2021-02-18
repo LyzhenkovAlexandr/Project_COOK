@@ -2,7 +2,7 @@
   <div class="t-footer">
       <div class="logo"><router-link to="/"> <img src="@/assets/logo.png" /></router-link></div>
     <div class="footer">
-    <a href="#">Разработка &copy; NotBad</a>
+    <a href="https://vk.com/id219051590" class="z">Разработал Лыженков Александр</a>
   </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {};
 .t-footer .logo {
   position: absolute;
   top: 6.5px;
-  width: 90%;
+  width: 85%;
   right: 0;
   margin: 0;
   height: 30px;
